@@ -2,14 +2,16 @@ import React from 'react'
 
 const CommentBox = ({data}) => {
   return (
-    <div className='flex'>
     <div>
-        <div className='rounded-full h-12 w-12 flex justify-center border-black border items-center'>S</div>
-    </div>
-    <div>
-        <p className='font-bold'>Sanjeev Singh</p>
-        <p>Lorem </p>
-    </div>
+    {data.map((comment,index)=>{
+        return(
+            <div key={index} className='border-l-2 border-black px-4 py-2 my-2'>
+                <p>{comment.username}</p>
+                <p>{comment.comment}</p>
+                {comment.replies && <CommentBox data={comment.replies}/>}
+            </div>
+        )
+    })}
     </div>
   )
 }
