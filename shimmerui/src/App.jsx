@@ -3,6 +3,8 @@ import Body from './components/Body'
 import { BrowserRouter ,Routes,Route} from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
+import Accordian from './components/Accordian';
+import Comments from './components/Comments';
 
 const App = () => {
   const [lang,setLang]=useState('en');
@@ -14,6 +16,8 @@ const App = () => {
     <nav className='p-2 text-white gap-2 m-2 flex w-96 justify-between text-lg'>
       <a href='/'>Home</a>
       <a href='/about'>About</a>
+      <a href='/accordian'>Accordian</a>
+      <a href='/comments'>Comments</a>
       <a href='/team'>Team</a>
       <a href='/login'>Login</a>
     </nav>
@@ -34,7 +38,9 @@ const App = () => {
     </header>
    <BrowserRouter>
     <Routes>
-      <Route path='/' element={<Home/>}></Route>
+      <Route path='/' element={<Home/>}></Route> 
+      <Route path='/accordian' element={<Accordian/>}></Route> 
+      <Route path='/comments' element={<Comments/>}></Route> 
       <Route path='/about' element={<About lang={lang}/>}></Route>
     </Routes>
    </BrowserRouter>
