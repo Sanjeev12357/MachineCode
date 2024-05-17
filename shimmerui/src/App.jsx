@@ -5,6 +5,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Accordian from './components/Accordian';
 import Comments from './components/Comments';
+import Pagination from './components/Pagination/Pagination';
 
 const App = () => {
   const [lang,setLang]=useState('en');
@@ -19,6 +20,7 @@ const App = () => {
       <a href='/accordian'>Accordian</a>
       <a href='/comments'>Comments</a>
       <a href='/team'>Team</a>
+      <a href='/page'>Pagination</a>
       <a href='/login'>Login</a>
     </nav>
     <select value={lang} onChange={(e)=>setLang(e.target.value)}>
@@ -41,6 +43,7 @@ const App = () => {
       <Route path='/' element={<Home/>}></Route> 
       <Route path='/accordian' element={<Accordian/>}></Route> 
       <Route path='/comments' element={<Comments/>}></Route> 
+      <Route path='/page' element={<Pagination/>}></Route> 
       <Route path='/about' element={<About lang={lang}/>}></Route>
     </Routes>
    </BrowserRouter>
